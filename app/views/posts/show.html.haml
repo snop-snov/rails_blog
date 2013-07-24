@@ -1,9 +1,14 @@
-%p
-  %strong Title:
-  = @post.title
+- model_class = Post
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
-  %strong Text:
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
+  = @post.title
+%p
+  %strong= model_class.human_attribute_name(:text) + ':'
+  %br
   = @post.text
 
 %h2 Comments
@@ -12,6 +17,7 @@
 %h2 Add a comment:
 = render "comments/form"
 
-= link_to 'Edit Post', edit_post_path(@post)
-|
-= link_to 'Back to Posts', posts_path
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), posts_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(@post), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), post_path(@post), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

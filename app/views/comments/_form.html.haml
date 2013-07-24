@@ -1,11 +1,6 @@
-= simple_form_for([@post, @post.comments.build]) do |f|
-  %p
-    = f.label :commenter
-    %br
-    = f.input_field :commenter
-  %p
-    = f.label :body
-    %br
-    = f.input_field :body
-  %p
-    = f.button :submit
+= simple_form_for([@post, @post.comments.new]) do |f|
+  = f.input :commenter
+  = f.input :body
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    -#= link_to t('.cancel', :default => t("helpers.links.cancel")), comments_path, :class => 'btn'
