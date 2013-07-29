@@ -18,6 +18,10 @@ gem 'haml-rails'
 gem 'simple_form', '~>3.0.0.rc'
 gem 'twitter-bootstrap-rails'
 
+gem 'state_machine'
+
+gem "coveralls", require: false
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 

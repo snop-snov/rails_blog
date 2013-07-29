@@ -3,7 +3,9 @@
 one:
   title: MyString
   text: MyText
+  state: new
 
 two:
   title: MyString
   text: MyText
+  state: viewed

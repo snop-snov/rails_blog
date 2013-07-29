@@ -14,11 +14,13 @@ class PostsControllerTest < ActionController::TestCase
       post :create, post: {title: 'Some title'}
     end
 
-    assert_redirected_to post_path(assigns(:post))
+    assert_redirected_to posts_path
   end
 
   test "should get show" do
     get :show, id: posts(:one).id
+    posts(:one).reload
+    assert_equal posts(:one).state, "viewed"
     assert_response :success
   end
 
