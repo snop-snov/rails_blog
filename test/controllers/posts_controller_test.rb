@@ -17,6 +17,14 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to posts_path
   end
 
+  test "should not create post with short title" do
+    authenticate
+    assert_no_difference('Post.count') do
+      post :create, post: {title: ''}
+    end
+    assert_response :success
+  end
+
   test "should get show" do
     get :show, id: posts(:one).id
     posts(:one).reload
@@ -37,6 +45,15 @@ class PostsControllerTest < ActionController::TestCase
     assert_equal posts(:two).state, "new"
 
     assert_redirected_to :posts
+  end
+
+  test "should not update post without title" do
+    authenticate
+    put :update, id: posts(:two).id, post: {title: ''}
+    posts(:two).reload
+    assert_equal posts(:two).title, "MyString"
+
+    assert_response :success
   end
 
   test "should destroy post" do
