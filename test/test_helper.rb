@@ -1,3 +1,7 @@
+require 'simplecov'
+SimpleCov.start
+SimpleCov.command_name 'Unit Tests'
+
 if ENV['TRAVIS']
   require 'coveralls'
   Coveralls.wear!('rails')

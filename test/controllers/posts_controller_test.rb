@@ -30,6 +30,15 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should update post" do
+    authenticate
+    put :update, id: posts(:two).id, post: {title: 'Some title'}
+    posts(:two).reload
+    assert_equal posts(:two).state, "new"
+
+    assert_redirected_to :posts
+  end
+
   test "should destroy post" do
     authenticate
 
@@ -39,5 +48,4 @@ class PostsControllerTest < ActionController::TestCase
 
     assert_redirected_to :posts
   end
-
 end
