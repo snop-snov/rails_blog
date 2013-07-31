@@ -13,8 +13,8 @@
     - @posts.each do |post|
       %tr
         %td= post.title
-        %td= post.text
-        %td=l post.created_at
+        %td= truncate(post.text, :length => 60, :separator => ' ')
+        %td=l post.created_at, :format => :short
         %td
           = link_to t('.show', :default => t("helpers.links.show")), post_path(post), :class => 'btn btn-mini'
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_post_path(post), :class => 'btn btn-mini'

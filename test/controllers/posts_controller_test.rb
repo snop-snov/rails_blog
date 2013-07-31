@@ -17,7 +17,7 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to posts_path
   end
 
-  test "should not create post with short title" do
+  test "should not create post without title" do
     authenticate
     assert_no_difference('Post.count') do
       post :create, post: {title: ''}
