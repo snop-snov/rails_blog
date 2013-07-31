@@ -40,6 +40,7 @@ end
 
 group :test do
   gem "coveralls", require: false
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :production do

@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionController::TestCase
+  setup do
+    @post = create :post
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -26,32 +30,31 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, id: posts(:one).id
-    posts(:one).reload
-    assert_equal posts(:one).state, "viewed"
+    get :show, id: @post.id
+    @post.reload
+    assert_equal @post.state, "viewed"
     assert_response :success
   end
 
   test "should get edit" do
     authenticate
-    get :edit, id: posts(:two).id
+    get :edit, id: @post.id
     assert_response :success
   end
 
   test "should update post" do
     authenticate
-    put :update, id: posts(:two).id, post: {title: 'Some title'}
-    posts(:two).reload
-    assert_equal posts(:two).state, "new"
+    put :update, id: @post.id, post: {title: 'Some title'}
+    @post.reload
+    assert_equal @post.state, "new"
 
     assert_redirected_to :posts
   end
 
   test "should not update post without title" do
     authenticate
-    put :update, id: posts(:two).id, post: {title: ''}
-    posts(:two).reload
-    assert_equal posts(:two).title, "MyString"
+    put :update, id: @post.id, post: {title: ''}
+    assert_equal @post.title, "MyString"
 
     assert_response :success
   end
@@ -60,9 +63,8 @@ class PostsControllerTest < ActionController::TestCase
     authenticate
 
     assert_difference('Post.count', -1) do
-      post :destroy, id: posts(:two).id
+      post :destroy, id: @post.id
     end
-
     assert_redirected_to :posts
   end
 end
