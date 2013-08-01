@@ -50,12 +50,15 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to :posts
   end
 
-  test "should destroy post" do
+  test "should mark post as deleted" do
     authenticate
 
-    assert_difference('Post.count', -1) do
+    assert_no_difference('Post.count', -1) do
       post :destroy, id: @post.id
     end
+
+    @post.reload
+    assert_equal @post.activity_state, "deleted"
     assert_redirected_to :posts
   end
 end
