@@ -51,14 +51,6 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to :posts
   end
 
-  test "should not update post without title" do
-    authenticate
-    put :update, id: @post.id, post: {title: ''}
-    assert_equal @post.title, "MyString"
-
-    assert_response :success
-  end
-
   test "should destroy post" do
     authenticate
 

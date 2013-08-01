@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :comment do
-    commenter 'MyString'
-    body      'MyText'
+    commenter
+    body
     association :post, factory: :post
   end
 end

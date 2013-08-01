@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :post do
-    title 'MyString'
-    text  'MyText'
+    title
+    text
     state 'new'
   end
 end
