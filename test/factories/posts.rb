@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :post do
     title
     text
-    state 'new'
+    state 'unpublished'
   end
 end

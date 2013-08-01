@@ -32,7 +32,6 @@ class PostsControllerTest < ActionController::TestCase
   test "should get show" do
     get :show, id: @post.id
     @post.reload
-    assert_equal @post.state, "viewed"
     assert_response :success
   end
 
@@ -46,7 +45,7 @@ class PostsControllerTest < ActionController::TestCase
     authenticate
     put :update, id: @post.id, post: {title: 'Some title'}
     @post.reload
-    assert_equal @post.state, "new"
+    assert_equal @post.state, "unpublished"
 
     assert_redirected_to :posts
   end

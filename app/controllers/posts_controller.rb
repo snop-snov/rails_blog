@@ -22,7 +22,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post.view
   end
 
   def edit
@@ -31,7 +30,6 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.unmark
     if @post.update(post_params)
       redirect_to posts_path
     else
@@ -48,6 +46,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :text)
+      params.require(:post).permit(:title, :text, :state_event)
     end
 end
