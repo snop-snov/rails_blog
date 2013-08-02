@@ -5,9 +5,8 @@
   = f.input :text, :input_html => { :class => "span6" }
   -unless @post.new_record?
     = f.label :state
-    = f.collection_select :state_event, @post.state_transitions, :event, :human_to_name, :include_blank => @post.human_state_name
-
-    = f.collection_select :activity_state_event, @post.activity_state_transitions, :event, :human_to_name, :include_blank => @post.human_activity_state_name
+    = f.input :state_event, as: :state_event, :label => false
+    = f.input :activity_state_event, as: :state_event, :label => false
 
   .form-actions
     = f.button :submit, :class => 'btn-primary'
