@@ -4,6 +4,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/snop-snov/rails_blog/badge.png)](https://coveralls.io/r/snop-snov/rails_blog)
 
+[![Code Climate](https://codeclimate.com/github/snop-snov/rails_blog.png)](https://codeclimate.com/github/snop-snov/rails_blog)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
