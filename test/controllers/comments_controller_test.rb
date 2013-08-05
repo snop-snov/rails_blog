@@ -10,7 +10,7 @@ class CommentsControllerTest < ActionController::TestCase
     assert_difference('Comment.count') do
       post :create, post_id: @post.id, comment: {commenter: 'Bob', body: 'Hi'}
     end
-    assert_redirected_to post_path(assigns(:post))
+    assert_redirected_to post_path(@post)
   end
 
   test "should destroy comment" do
@@ -21,7 +21,7 @@ class CommentsControllerTest < ActionController::TestCase
       delete :destroy, post_id: @post.id, id: @comment.id
     end
 
-    assert_redirected_to post_path(assigns(:post))
+    assert_redirected_to post_path(@post)
   end
 
   test "should authenticate before destroy comment" do
