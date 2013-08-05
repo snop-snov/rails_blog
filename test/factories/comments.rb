@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :comment do
     commenter
     body
-    association :post, factory: :post
+    association :post
   end
 end
