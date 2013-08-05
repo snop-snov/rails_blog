@@ -17,9 +17,7 @@ class StateEventInput < SimpleForm::Inputs::CollectionSelectInput
   private
 
   def state_machine_name
-    state_machine_name = attribute_name.to_s.split('_')
-    state_machine_name.delete 'event'
-    state_machine_name.join '_'
+    attribute_name.to_s.gsub '_event', ''
   end
 
   def state_transitions_name
