@@ -14,4 +14,12 @@ FactoryGirl.define do
   sequence :body do |n|
     "Comment #{n}"
   end
+
+  sequence :username do |n|
+    "User #{n}"
+  end
+
+  sequence :password do |n|
+    "passwd #{n}"
+  end
 end
