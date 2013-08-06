@@ -48,6 +48,8 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     colorize (0.5.8)
+    configus (0.0.4)
+      rake
     coveralls (0.6.7)
       colorize
       multi_json (~> 1.3)
@@ -161,6 +163,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  configus
   coveralls
   factory_girl_rails (~> 4.0)
   haml-rails

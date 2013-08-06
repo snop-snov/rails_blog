@@ -21,6 +21,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'state_machine'
 
+gem "configus"
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
