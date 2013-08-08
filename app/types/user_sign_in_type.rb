@@ -17,9 +17,7 @@ class UserSignInType
 
   def check_authenticate
     if !(user.try(:password) == password)
-      #raise "WWWWWWWWWWWWWW"
       errors.add(:password, :user_or_password_invalid)
-      #raise errors.inspect
     end
   end
 end

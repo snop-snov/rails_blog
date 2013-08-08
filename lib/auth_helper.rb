@@ -17,6 +17,12 @@ module AuthHelper
     end
   end
 
+  def owner_logged_in?
+    if signed_in?
+      true if current_user[:username] == configus.owner.username
+    end
+  end
+
   def current_user
     User.where(id: session[:user_id]).first!
   end

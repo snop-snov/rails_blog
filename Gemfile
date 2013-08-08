@@ -24,6 +24,8 @@ gem 'state_machine'
 
 gem "configus"
 
+gem 'russian', '~> 0.6.0'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 

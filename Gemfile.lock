@@ -113,6 +113,8 @@ GEM
     ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     sass (3.2.9)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -178,6 +180,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails3_serve_static_assets!
   rails_log_stdout!
+  russian (~> 0.6.0)
   sass-rails (~> 4.0.0)
   sdoc
   simple_form (~> 3.0.0.rc)

@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
       sign_in @session.user
       redirect_to posts_path
     else
-      #redirect_to new_session_path
       render 'new'
     end
   end

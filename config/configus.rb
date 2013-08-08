@@ -1,8 +1,7 @@
 Configus.build Rails.env do
   env :production do
     owner do
-      login "admin"
-      password "admin_pass"
+      username "admin"
     end
   end
 
