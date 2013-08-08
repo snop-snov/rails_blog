@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'haml-rails'
 gem 'simple_form', '~>3.0.0.rc'
 gem 'twitter-bootstrap-rails'
+gem 'virtus'
 
 gem 'state_machine'
 

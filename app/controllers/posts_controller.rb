@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  #http_basic_authenticate_with name: configus.basic_auth.name, password: configus.basic_auth.password, except: [:index, :show]
+  before_action :require_owner_login, only: [:new, :create, :edit, :updete, :destroy]
 
   def new
     @post = Post.new
@@ -45,6 +46,13 @@ class PostsController < ApplicationController
   end
 
   private
+    def require_owner_login
+      #unless owner_logged_in?
+      #  flash[:error] = "You must be logged in to access this section"
+      #  redirect_to new_users # halts request cycle
+      #end
+    end
+
     def post_params
       params.require(:post).permit(:title, :text, :state_event, :activity_state_event)
     end

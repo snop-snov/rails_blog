@@ -1,0 +1,15 @@
+- model_class = User
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:username)
+      %th= model_class.human_attribute_name(:created_at)
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.username
+        %td=l user.created_at, :format => :short
+
+= link_to t('.new', :default => t("helpers.links.new")), new_user_path, :class => 'btn btn-primary'

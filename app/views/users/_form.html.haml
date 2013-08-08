@@ -1,0 +1,14 @@
+= simple_form_for @user, :html => { :class => 'form-vertical' } do |f|
+  = f.input :username, :wrapper => :prepend, :label => false do
+    =content_tag :span, "Username", :class => "add-on"
+    =f.input_field :username
+  = f.input :password, :wrapper => :prepend, :label => false do
+    =content_tag :span, "Password", :class => "add-on"
+    =f.input_field :password
+  -unless @user.new_record?
+    = f.label :role
+    = f.input :state_event, as: :state_event, :label => false
+
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn'

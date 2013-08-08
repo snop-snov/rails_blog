@@ -12,11 +12,10 @@ class PostsControllerTest < ActionController::TestCase
 
   test "should create post" do
     authenticate
-
+    attrs = attributes_for :post
     assert_difference('Post.count') do
-      post :create, post: {title: 'Some title'}
+      post :create, post: attrs
     end
-
     assert_redirected_to posts_path
   end
 

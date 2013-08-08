@@ -26,4 +26,5 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
   require 'factory_girl_rails'
   include FactoryGirl::Syntax::Methods
+  include AuthHelper
 end
