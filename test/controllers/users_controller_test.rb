@@ -7,10 +7,10 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     attrs = attributes_for :user
-    assert_difference('User.count') do
-      post :create, user: attrs
-    end
+    post :create, user: attrs
 
-    assert_redirected_to users_path
+    assert_response :redirect
+    user = User.find_by_username(attrs[:username])
+    assert user
   end
 end
