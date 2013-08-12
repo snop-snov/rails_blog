@@ -1,17 +1,60 @@
 ru:
   posts:
+    title: Заголовок
     index:
       posts_listing: Посты
+      actions: Действия
+      show: Показать
+      edit: Редактировать
+      destroy: Удалить
+      new: Новая запись
     new:
       create_post: Создать пост
+      no_owner_logged: "Вы должны быть хозяином блога, чтобы создавать записи"
     edit:
       edit_post: Редактировать запись
+      no_owner_logged: "Вы должны быть хозяином блога, чтобы редактировать запись"
     show:
       show_post: Пост
-    title: Заголовок
+      title: Заголовок
+      text: Текст
+      comments: Комментарии
+      add_comment: Высказаться
+      back: Назад
+      edit: Редактировать
+      destroy: Удалить
+    destroy:
+      no_owner_logged: "Вы должны быть хозяином блога, чтобы удалить запись"
+    form:
+      cancel: Выход
+
   users:
     index:
       users_listing: Юзеры
+      new: Заригистрироваться
     new:
       new_user: Регистрация
+
   comments:
+    comment:
+      commenter: Автор
+      comment: Коммент
+      destroy: "Удалить коммент"
+    destroy:
+      no_comment_owner: "Вы не можете удалять чужие комментарии"
+      nobody_signed_in: "Сначала нужно залогиниться"
+
+  sessions:
+    new:
+      cancel: Отмена
+
+  layouts:
+    shared:
+      navbar:
+        blog: Блог
+        new_post: Новая запись
+        sign_out: Выход
+        sign_in: Вход
+        sign_up: Регистрация
+
+  types:

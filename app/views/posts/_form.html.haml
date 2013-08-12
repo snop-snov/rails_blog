@@ -1,12 +1,9 @@
-= simple_form_for @post, :html => { :class => 'form-vertical' } do |f|
-  = f.input :title, :wrapper => :prepend, :label => false do
-    =content_tag :span, t('posts.title'), :class => "add-on"
-    =f.input_field :title
-  = f.input :text, :input_html => { :class => "span6" }
+= simple_form_for @post, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :title
+  = f.input :text
   -unless @post.new_record?
-    = f.label :state
-    = f.input :state_event, as: :state_event, :label => false
-    = f.input :activity_state_event, as: :state_event, :label => false
+    = f.input :state_event, as: :state_event
+    = f.input :activity_state_event, as: :state_event
 
   .form-actions
     = f.button :submit, :class => 'btn-primary'

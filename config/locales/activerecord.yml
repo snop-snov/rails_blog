@@ -1,0 +1,23 @@
+ru:
+  activerecord:
+    models:
+      user: 'пользователь'
+      post: 'пост'
+      comment: 'коммент'
+
+    attributes:
+      user:
+        username: 'Логин'
+        password: 'Пароль'
+        created_at: 'Дата регистрации'
+      post:
+        title: 'Название'
+        text: 'Текст'
+        created_at: 'Дата создания'
+        state: 'Состояние'
+        state_event: 'Состояние'
+        activity_state: 'Статус'
+        activity_state_event: 'Статус'
+      comment:
+        commenter: 'Автор'
+        body: 'Текст комментария'

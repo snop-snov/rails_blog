@@ -3,18 +3,18 @@
   %h1=t '.show_post'
 
 %p
-  %strong= model_class.human_attribute_name(:title) + ':'
+  %strong= t('.title') + ':'
   %br
   = @post.title
 %p
-  %strong= model_class.human_attribute_name(:text) + ':'
+  %strong= t('.text') + ':'
   %br
   = @post.text
 
-%h2 Comments
+%h2= t('.comments')
 = render @post.comments
 
-%h2 Add a comment:
+%h3= t('.add_comment') + ':'
 = render "comments/form"
 
 .form-actions

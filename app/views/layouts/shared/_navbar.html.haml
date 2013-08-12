@@ -5,13 +5,14 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand(href= posts_path) Blog
+      %a.brand(href= posts_path)
+        =t('.blog')
       .container.nav-collapse
         %ul.nav
-          %li= link_to "New post", new_post_path
+          %li= link_to t('.new_post'), new_post_path
         %ul.nav.pull-right
           - if signed_in?
-            %li= link_to current_user.username, user_path(current_user.username)
+            %li= link_to current_user.username, posts_path
             %li= link_to t('.sign_out'), session_path, method: :delete
           - else
             %li= link_to t('.sign_in'), new_session_path

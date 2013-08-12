@@ -1,10 +1,10 @@
 %p
-  %strong Commenter:
+  %strong=t('.commenter') + ':'
   = comment.user.username
 
 %p
-  %strong Comment:
+  %strong=t('.comment') + ':'
   = comment.body
 
 %p
-  = link_to 'Destroy Comment', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' }
+  = link_to t('.destroy'), [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' }
