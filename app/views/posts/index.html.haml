@@ -19,7 +19,7 @@
         %td
           = link_to t('.show'), post_path(post), :class => 'btn btn-mini'
           = link_to t('.edit'), edit_post_path(post), :class => 'btn btn-mini'
-          = link_to t('.destroy'), post_path(post), :method => :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger'
+          = link_to t('.destroy'), post_path(post), :method => :delete, data: { :confirm => t('.delete_confirm') }, class: 'btn btn-mini btn-danger'
         %td= post.state
         %td= post.activity_state
 

@@ -7,8 +7,7 @@ ru:
 
     attributes:
       user:
-        username: 'Логин'
-        password: 'Пароль'
+        username: 'Юзер'
         created_at: 'Дата регистрации'
       post:
         title: 'Название'

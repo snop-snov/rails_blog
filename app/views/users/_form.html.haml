@@ -1,9 +1,6 @@
 = simple_form_for @user, :html => { :class => 'form-horizontal' } do |f|
   = f.input :username
   = f.input :password
-  -unless @user.new_record?
-    = f.label :role
-    = f.input :state_event, as: :state_event, :label => false
 
   .form-actions
     = f.button :submit, :class => 'btn-primary'

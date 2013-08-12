@@ -8,6 +8,7 @@ ru:
       edit: Редактировать
       destroy: Удалить
       new: Новая запись
+      delete_confirm: "Вы уверены?"
     new:
       create_post: Создать пост
       no_owner_logged: "Вы должны быть хозяином блога, чтобы создавать записи"
@@ -40,6 +41,7 @@ ru:
       commenter: Автор
       comment: Коммент
       destroy: "Удалить коммент"
+      delete_confirm: "Вы уверены?"
     destroy:
       no_comment_owner: "Вы не можете удалять чужие комментарии"
       nobody_signed_in: "Сначала нужно залогиниться"
@@ -47,6 +49,7 @@ ru:
   sessions:
     new:
       cancel: Отмена
+      sign_in: Вход
 
   layouts:
     shared:
