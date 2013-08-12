@@ -2,10 +2,9 @@ FactoryGirl.define do
   factory :user do
     username "user"
     password
-  end
 
-  factory :owner, class: User do
-    username "admin"
-    password
+    factory :owner do
+      username "admin"
+    end
   end
 end
