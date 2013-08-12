@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
+  before_action :require_owner_login, only: [:new, :create, :edit, :updete, :destroy]
 
   def new
-    require_owner_login
     @post = Post.new
   end
 
   def create
-    require_owner_login
     @post = Post.new(post_params)
 
     if @post.save
@@ -25,12 +24,10 @@ class PostsController < ApplicationController
   end
 
   def edit
-    require_owner_login
     @post = Post.find(params[:id])
   end
 
   def update
-    require_owner_login
     @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to posts_path
@@ -40,7 +37,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    require_owner_login
     @post = Post.find(params[:id])
     @post.mark_as_deleted
 
@@ -48,14 +44,14 @@ class PostsController < ApplicationController
   end
 
   private
-    def require_owner_login
-      unless owner_logged_in?
-        flash[:error] = "You must be owner to access this section"
-        redirect_to posts_path
-      end
+  def require_owner_login
+    unless owner_logged_in?
+      flash[:error] = t('.no_owner_logged')
+      redirect_to posts_path
     end
+  end
 
-    def post_params
-      params.require(:post).permit(:title, :text, :state_event, :activity_state_event)
-    end
+  def post_params
+    params.require(:post).permit(:title, :text, :state_event, :activity_state_event)
+  end
 end
