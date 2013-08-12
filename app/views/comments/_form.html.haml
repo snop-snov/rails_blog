@@ -1,4 +1,4 @@
-= simple_form_for [@post, @post.comments.build], :html => { :class => 'form-vertical' } do |f|
+= simple_form_for [@post, @comment], :html => { :class => 'form-vertical' } do |f|
   = f.input :body, :wrapper => :no_label
   .form-actions
     = f.button :submit, :class => 'btn-primary'
