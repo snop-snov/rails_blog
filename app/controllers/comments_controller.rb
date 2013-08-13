@@ -13,9 +13,10 @@ class CommentsController < ApplicationController
 
     if @comment.user == current_user
       @comment.destroy
+      f(:success)
       redirect_to post_path(@post)
     else
-      flash[:error] = t('.no_comment_owner')
+      f(:error)
       redirect_to post_path(@post)
     end
   end
@@ -23,7 +24,7 @@ class CommentsController < ApplicationController
   private
   def require_sign_in
     unless signed_in?
-      flash[:error] = t('.nobody_signed_in')
+      f(:error)
       redirect_to new_session_path
     end
   end

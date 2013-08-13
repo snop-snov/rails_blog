@@ -19,6 +19,7 @@ gem 'haml-rails'
 gem 'simple_form', '~>3.0.0.rc'
 gem 'twitter-bootstrap-rails'
 gem 'virtus'
+gem 'term-ansicolor'
 
 gem 'state_machine'
 

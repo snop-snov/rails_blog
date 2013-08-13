@@ -11,10 +11,8 @@ ru:
       delete_confirm: "Вы уверены?"
     new:
       create_post: Создать пост
-      no_owner_logged: "Вы должны быть хозяином блога, чтобы создавать записи"
     edit:
       edit_post: Редактировать запись
-      no_owner_logged: "Вы должны быть хозяином блога, чтобы редактировать запись"
     show:
       show_post: Пост
       title: Заголовок
@@ -24,8 +22,6 @@ ru:
       back: Назад
       edit: Редактировать
       destroy: Удалить
-    destroy:
-      no_owner_logged: "Вы должны быть хозяином блога, чтобы удалить запись"
     form:
       cancel: Выход
 
@@ -42,9 +38,6 @@ ru:
       comment: Коммент
       destroy: "Удалить коммент"
       delete_confirm: "Вы уверены?"
-    destroy:
-      no_comment_owner: "Вы не можете удалять чужие комментарии"
-      nobody_signed_in: "Сначала нужно залогиниться"
 
   sessions:
     new:
@@ -59,5 +52,3 @@ ru:
         sign_out: Выход
         sign_in: Вход
         sign_up: Регистрация
-
-  types:

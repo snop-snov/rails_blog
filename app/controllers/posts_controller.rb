@@ -9,8 +9,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+      f(:success)
       redirect_to posts_path
     else
+      f(:error)
       render 'new'
     end
   end
@@ -47,7 +49,7 @@ class PostsController < ApplicationController
   private
   def require_owner_login
     unless owner_logged_in?
-      flash[:error] = t('.no_owner_logged')
+      f(:error)
       redirect_to posts_path
     end
   end
