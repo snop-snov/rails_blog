@@ -4,7 +4,7 @@ FactoryGirl.define do
     password
 
     factory :owner do
-      username "admin"
+      username {configus.owner.username}
     end
   end
 end
