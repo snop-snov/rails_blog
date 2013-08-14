@@ -4,8 +4,8 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:username)
-      %th= model_class.human_attribute_name(:created_at)
+      %th= ham(:user, :username)
+      %th= ham(:user, :created_at)
   %tbody
     - @users.each do |user|
       %tr

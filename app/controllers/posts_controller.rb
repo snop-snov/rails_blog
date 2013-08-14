@@ -11,7 +11,6 @@ class PostsController < ApplicationController
       f(:success)
       redirect_to posts_path
     else
-      f(:error)
       render 'new'
     end
   end

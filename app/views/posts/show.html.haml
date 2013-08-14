@@ -20,4 +20,7 @@
 .form-actions
   = link_to t('.back'), posts_path, :class => 'btn'
   = link_to t('.edit'), edit_post_path(@post), :class => 'btn'
-  = link_to t('.destroy'), post_path(@post), :method => "delete", :class => 'btn btn-danger'
+  -if @post.deleted?
+    = link_to t('.destroy'), posts_path, class: 'btn btn-inverse'
+  -else
+    = link_to t('.destroy'), post_path(@post), :method => :delete, data: { :confirm => t('.delete_confirm') }, class: 'btn btn-danger'

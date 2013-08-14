@@ -22,6 +22,7 @@ ru:
       back: Назад
       edit: Редактировать
       destroy: Удалить
+      delete_confirm: "Вы уверены?"
     form:
       cancel: Выход
 
