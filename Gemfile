@@ -45,6 +45,8 @@ group :doc do
 end
 
 group :test do
+  gem "turn"
+  gem "spring"
   gem "coveralls", require: false
   gem "factory_girl_rails", "~> 4.0"
 end

@@ -6,8 +6,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-
+    @post = PostEditType.new(params[:post])
     if @post.save
       f(:success)
       redirect_to posts_path
@@ -32,7 +31,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
+    @post = @post.becomes(PostEditType)
+
+    if @post.update(params[:post])
       redirect_to posts_path
     else
       render 'edit'
@@ -52,9 +53,5 @@ class PostsController < ApplicationController
       f(:error)
       redirect_to posts_path
     end
-  end
-
-  def post_params
-    params.require(:post).permit(:title, :text, :state_event, :activity_state_event)
   end
 end
