@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Web::PostsController < ApplicationController
   before_action :require_owner_login, only: [:new, :create, :edit, :updete, :destroy]
 
   def new

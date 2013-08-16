@@ -15,7 +15,7 @@
 = render @post.comments
 
 %h3= t('.add_comment') + ':'
-= render "comments/form"
+= render "web/comments/form"
 
 .form-actions
   = link_to t('.back'), posts_path, :class => 'btn'

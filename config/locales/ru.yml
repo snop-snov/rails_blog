@@ -1,49 +1,50 @@
 ru:
-  posts:
-    title: Заголовок
-    index:
-      posts_listing: Посты
-      actions: Действия
-      show: Показать
-      edit: Редактировать
-      destroy: Удалить
-      new: Новая запись
-      delete_confirm: "Вы уверены?"
-    new:
-      create_post: Создать пост
-    edit:
-      edit_post: Редактировать запись
-    show:
-      show_post: Пост
+  web:
+    posts:
       title: Заголовок
-      text: Текст
-      comments: Комментарии
-      add_comment: Высказаться
-      back: Назад
-      edit: Редактировать
-      destroy: Удалить
-      delete_confirm: "Вы уверены?"
-    form:
-      cancel: Выход
+      index:
+        posts_listing: Посты
+        actions: Действия
+        show: Показать
+        edit: Редактировать
+        destroy: Удалить
+        new: Новая запись
+        delete_confirm: "Вы уверены?"
+      new:
+        create_post: Создать пост
+      edit:
+        edit_post: Редактировать запись
+      show:
+        show_post: Пост
+        title: Заголовок
+        text: Текст
+        comments: Комментарии
+        add_comment: Высказаться
+        back: Назад
+        edit: Редактировать
+        destroy: Удалить
+        delete_confirm: "Вы уверены?"
+      form:
+        cancel: Выход
 
-  users:
-    index:
-      users_listing: Юзеры
-      new: Заригистрироваться
-    new:
-      new_user: Регистрация
+    users:
+      index:
+        users_listing: Юзеры
+        new: Заригистрироваться
+      new:
+        new_user: Регистрация
 
-  comments:
-    comment:
-      commenter: Автор
-      comment: Коммент
-      destroy: "Удалить коммент"
-      delete_confirm: "Вы уверены?"
+    comments:
+      comment:
+        commenter: Автор
+        comment: Коммент
+        destroy: "Удалить коммент"
+        delete_confirm: "Вы уверены?"
 
-  sessions:
-    new:
-      cancel: Отмена
-      sign_in: Вход
+    sessions:
+      new:
+        cancel: Отмена
+        sign_in: Вход
 
   layouts:
     shared:

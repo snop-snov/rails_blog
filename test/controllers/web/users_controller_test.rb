@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UsersControllerTest < ActionController::TestCase
+class Web::UsersControllerTest < ActionController::TestCase
   test "should create user" do
     attrs = attributes_for :user
     post :create, user: attrs

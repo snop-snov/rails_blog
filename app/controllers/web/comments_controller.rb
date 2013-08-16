@@ -1,8 +1,9 @@
-class CommentsController < ApplicationController
+class Web::CommentsController < Web::ApplicationController
   before_action :require_sign_in
 
   def create
     @post = Post.find(params[:post_id])
+
     @comment = @post.comments.create(comment_params)
     redirect_to post_path(@post)
   end
