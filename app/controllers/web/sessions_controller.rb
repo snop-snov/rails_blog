@@ -1,6 +1,7 @@
 class Web::SessionsController < Web::ApplicationController
   def new
     @session = UserSignInType.new
+    add_breadcrumb :new, :root_path
   end
 
   def create

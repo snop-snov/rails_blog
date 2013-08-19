@@ -1,6 +1,7 @@
 class Web::UsersController < Web::ApplicationController
   def new
     @user = User.new
+    add_breadcrumb :new, :root_path
   end
 
   def index

@@ -1,0 +1,14 @@
+ru:
+  breadcrumbs:
+    web:
+      application:
+        index: Домой
+      posts:
+        index: Посты
+        new: Новый пост
+        show: Показать пост
+        edit: Редактировать пост
+      users:
+        new: Регистрация
+      sessions:
+        new: Войти

@@ -1,8 +1,10 @@
-class Web::PostsController < ApplicationController
+class Web::PostsController < Web::ApplicationController
   before_action :require_owner_login, only: [:new, :create, :edit, :updete, :destroy]
+  add_breadcrumb :index, :posts_path
 
   def new
     @post = Post.new
+    add_breadcrumb :new, :new_post_path
   end
 
   def create
@@ -22,10 +24,12 @@ class Web::PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Post::Comment.new
+    add_breadcrumb :show, @post
   end
 
   def edit
     @post = Post.find(params[:id])
+    add_breadcrumb :edit, :edit_post_path
   end
 
   def update
