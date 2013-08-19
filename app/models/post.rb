@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
+  mount_uploader :image, PostImageUploader
+
   state_machine :state, :initial => :unpublished do
     state :unpublished
     state :published
@@ -10,7 +12,7 @@ class Post < ActiveRecord::Base
     end
     event :unpublish do
       transition :published => :unpublished
-    end    
+    end
   end
 
   state_machine :activity_state, :initial => :new do
