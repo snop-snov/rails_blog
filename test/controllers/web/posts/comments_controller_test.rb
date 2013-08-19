@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Web::Post::CommentsControllerTest < ActionController::TestCase
+class Web::Posts::CommentsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
     @comment = create 'post/comment'
@@ -9,7 +9,7 @@ class Web::Post::CommentsControllerTest < ActionController::TestCase
   test "should create comment" do
     sign_in @comment.user
     attrs = attributes_for 'post/comment'
-    post :create, post_id: @post.id, user_id: @comment.user_id, comment: attrs
+    post :create, post_id: @post.id, user_id: @comment.user_id, post_comment: attrs
 
     assert_response :redirect
     comment = Post::Comment.find_by_body(attrs[:body])

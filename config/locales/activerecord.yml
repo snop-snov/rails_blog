@@ -12,11 +12,12 @@ ru:
       post:
         title: 'Название'
         text: 'Текст'
+        image: 'Картинка'
         created_at: 'Дата создания'
         state: 'Состояние'
         state_event: 'Состояние'
         activity_state: 'Статус'
         activity_state_event: 'Статус'
-      comment:
-        commenter: 'Автор'
-        body: 'Текст комментария'
+        comment:
+          commenter: 'Автор'
+          body: 'Текст комментария'

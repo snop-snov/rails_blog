@@ -1,4 +1,4 @@
-class Web::Post::ApplicationController < Web::ApplicationController
+class Web::Posts::ApplicationController < Web::ApplicationController
   helper_method :resource_post
 
   def resource_post

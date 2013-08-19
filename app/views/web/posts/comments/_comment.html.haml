@@ -1,0 +1,10 @@
+%p
+  %strong=t('.commenter') + ':'
+  = comment.user.username
+
+%p
+  %strong=t('.comment') + ':'
+  = comment.body
+
+%p
+  = link_to t('.destroy'), post_comment_path(comment.post, comment), method: :delete, data: { :confirm => t('.delete_confirm') }

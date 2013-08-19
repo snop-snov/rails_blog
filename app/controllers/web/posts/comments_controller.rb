@@ -1,4 +1,4 @@
-class Web::Post::CommentsController < Web::Post::ApplicationController
+class Web::Posts::CommentsController < Web::Posts::ApplicationController
   before_action :require_sign_in
 
   def create
@@ -31,7 +31,7 @@ class Web::Post::CommentsController < Web::Post::ApplicationController
   end
 
   def comment_params
-    c_params = params.require(:comment).permit(:body)
+    c_params = params.require(:post_comment).permit(:body)
     c_params[:user_id] = current_user.id
     c_params
   end

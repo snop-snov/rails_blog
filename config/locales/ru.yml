@@ -26,6 +26,12 @@ ru:
         delete_confirm: "Вы уверены?"
       form:
         cancel: Выход
+      comments:
+        comment:
+          commenter: Автор
+          comment: Коммент
+          destroy: "Удалить коммент"
+          delete_confirm: "Вы уверены?"
 
     users:
       index:
@@ -33,13 +39,6 @@ ru:
         new: Заригистрироваться
       new:
         new_user: Регистрация
-
-    comments:
-      comment:
-        commenter: Автор
-        comment: Коммент
-        destroy: "Удалить коммент"
-        delete_confirm: "Вы уверены?"
 
     sessions:
       new:

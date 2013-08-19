@@ -12,10 +12,11 @@
   = @post.text
 
 %h2= t('.comments')
-= render @post.comments
+-#= render @post.comments
+= render partial: "web/posts/comments/comment", collection: @post.comments
 
 %h3= t('.add_comment') + ':'
-= render "web/comments/form"
+= render "web/posts/comments/form"
 
 .form-actions
   = link_to t('.back'), posts_path, :class => 'btn'
