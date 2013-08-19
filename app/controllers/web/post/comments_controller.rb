@@ -1,15 +1,15 @@
-class Web::CommentsController < Web::ApplicationController
+class Web::Post::CommentsController < Web::Post::ApplicationController
   before_action :require_sign_in
 
   def create
-    @post = Post.find(params[:post_id])
+    @post = resource_post
 
     @comment = @post.comments.create(comment_params)
     redirect_to post_path(@post)
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
+    @post = resource_post
     @comment = @post.comments.find(params[:id])
 
     if @comment.user == current_user

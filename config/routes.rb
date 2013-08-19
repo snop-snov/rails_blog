@@ -4,7 +4,9 @@ Blog::Application.routes.draw do
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
     resources :posts do
-      resources :comments
+      scope module: :post do
+        resources :comments
+      end
     end
     resources :users
     resource :session
@@ -47,7 +49,7 @@ Blog::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
