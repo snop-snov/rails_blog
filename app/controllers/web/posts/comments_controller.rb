@@ -30,8 +30,9 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
     end
   end
 
+#TODO сделать через типы
   def comment_params
-    c_params = params.require(:post_comment).permit(:body)
+    c_params = params.require(:post_comment).permit(:body, :parent_id)
     c_params[:user_id] = current_user.id
     c_params
   end

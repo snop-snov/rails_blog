@@ -18,12 +18,12 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.published
   end
 
   def show
     @post = Post.find(params[:id])
-    @comment = Post::Comment.new
+    @comment = Post::Comment.new(:parent_id => params[:parent_id])
     add_breadcrumb :show, @post
   end
 
