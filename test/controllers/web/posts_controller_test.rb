@@ -15,15 +15,14 @@ class Web::PostsControllerTest < ActionController::TestCase
     sign_in @owner
     attrs = attributes_for :post
     post :create, post: attrs
-
     assert_response :redirect
+
     post = Post.find_by_title(attrs[:title])
     assert post
   end
 
   test "should get show" do
     get :show, id: @post.id
-    @post.reload
     assert_response :success
   end
 
@@ -36,10 +35,10 @@ class Web::PostsControllerTest < ActionController::TestCase
   test "should update post" do
     sign_in @owner
     put :update, id: @post.id, post: {title: 'Some title'}
+    assert_redirected_to :posts
+
     @post.reload
     assert_equal @post.state, "unpublished"
-
-    assert_redirected_to :posts
   end
 
   test "should mark post as deleted" do

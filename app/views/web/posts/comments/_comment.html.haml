@@ -1,10 +1,19 @@
 %p
-  %strong=t('.commenter') + ':'
+  %strong=t('.id')
+  = comment.id
+  -unless comment.is_root?
+    = t('.parent')
+    = comment.parent_id
+
+%p
+  %strong=t('.commenter')
   = comment.user.username
 
 %p
-  %strong=t('.comment') + ':'
+  %strong=t('.comment')
   = comment.body
 
 %p
+  = link_to t('.reply'), post_path(comment.post, comment, :parent_id => comment)
+  |
   = link_to t('.destroy'), post_comment_path(comment.post, comment), method: :delete, data: { :confirm => t('.delete_confirm') }

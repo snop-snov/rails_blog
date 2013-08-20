@@ -28,10 +28,15 @@ ru:
         cancel: Выход
       comments:
         comment:
-          commenter: Автор
-          comment: Коммент
-          destroy: "Удалить коммент"
+          id: "Коммент №"
+          parent: "ответ на коммент №"
+          commenter: "Автор:"
+          comment: "Текст:"
+          reply: Комментировать
+          destroy: Удалить коммент
           delete_confirm: "Вы уверены?"
+        form:
+          parent: "Ответ на коммент №"
 
     users:
       index:
