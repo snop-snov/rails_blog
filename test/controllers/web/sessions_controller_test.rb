@@ -9,13 +9,13 @@ class Web::SessionsControllerTest < ActionController::TestCase
     attrs = {:username => @user.username, :password => @user.password}
     post :create, user_sign_in_type: attrs
     assert_redirected_to posts_path
-    assert signed_in?
+    assert { signed_in? }
   end
 
   test "should destroy session" do
     sign_in @user
     delete :destroy
     assert_redirected_to posts_path
-    assert !signed_in?
+    assert { !signed_in? }
   end
 end

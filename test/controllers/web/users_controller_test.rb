@@ -7,6 +7,6 @@ class Web::UsersControllerTest < ActionController::TestCase
 
     assert_response :redirect
     user = User.find_by_username(attrs[:username])
-    assert user
+    assert { user }
   end
 end

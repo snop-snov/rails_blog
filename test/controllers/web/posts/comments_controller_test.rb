@@ -13,7 +13,7 @@ class Web::Posts::CommentsControllerTest < ActionController::TestCase
 
     assert_response :redirect
     comment = Post::Comment.find_by_body(attrs[:body])
-    assert comment
+    assert { comment }
   end
 
   test "should destroy comment" do
@@ -22,6 +22,6 @@ class Web::Posts::CommentsControllerTest < ActionController::TestCase
     delete :destroy, post_id: @post.id, id: @comment.id
 
     assert_response :redirect
-    assert !Post::Comment.exists?(@comment)
+    assert { !Post::Comment.exists?(@comment) }
   end
 end

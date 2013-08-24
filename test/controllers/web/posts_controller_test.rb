@@ -18,7 +18,7 @@ class Web::PostsControllerTest < ActionController::TestCase
     assert_response :redirect
 
     post = Post.find_by_title(attrs[:title])
-    assert post
+    assert { post }
   end
 
   test "should get show" do
