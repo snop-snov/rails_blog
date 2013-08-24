@@ -10,6 +10,7 @@ end
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require 'wrong'
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
@@ -23,4 +24,5 @@ class ActiveSupport::TestCase
   require 'factory_girl_rails'
   include FactoryGirl::Syntax::Methods
   include AuthHelper
+  include Wrong
 end

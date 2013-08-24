@@ -10,6 +10,7 @@ gem 'puma'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ancestry'
+gem 'wrong'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

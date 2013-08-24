@@ -38,7 +38,7 @@ class Web::PostsControllerTest < ActionController::TestCase
     assert_redirected_to :posts
 
     @post.reload
-    assert_equal @post.state, "unpublished"
+    assert { @post.state == "unpublished" }
   end
 
   test "should mark post as deleted" do
@@ -47,6 +47,6 @@ class Web::PostsControllerTest < ActionController::TestCase
     assert_response :redirect
 
     @post.reload
-    assert_equal @post.activity_state, "deleted"
+    assert { @post.activity_state == "deleted" }
   end
 end
