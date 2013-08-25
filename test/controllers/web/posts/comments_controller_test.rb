@@ -12,7 +12,7 @@ class Web::Posts::CommentsControllerTest < ActionController::TestCase
     post :create, post_id: @post.id, user_id: @comment.user_id, post_comment: attrs
 
     assert_response :redirect
-    comment = Post::Comment.find_by_body(attrs[:body])
+    comment = Post::Comment.where(body: attrs[:body]).first
     assert { comment }
   end
 

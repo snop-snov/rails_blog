@@ -22,18 +22,18 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def show
-    @post = Post.published.find(params[:id])
+    @post = Post.published.where(id: params[:id]).first
     @comment = Post::Comment.new(:parent_id => params[:parent_id])
     add_breadcrumb :show, @post
   end
 
   def edit
-    @post = Post.published.find(params[:id])
+    @post = Post.published.where(id: params[:id]).first
     add_breadcrumb :edit, :edit_post_path
   end
 
   def update
-    @post = Post.published.find(params[:id])
+    @post = Post.published.where(id: params[:id]).first
     @post = @post.becomes(PostEditType)
 
     if @post.update(params[:post])
@@ -44,7 +44,7 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def destroy
-    @post = Post.published.find(params[:id])
+    @post = Post.published.where(id: params[:id]).first
     @post.mark_as_deleted
 
     redirect_to posts_path

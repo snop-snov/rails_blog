@@ -6,7 +6,7 @@ class Web::UsersControllerTest < ActionController::TestCase
     post :create, user: attrs
 
     assert_response :redirect
-    user = User.find_by_username(attrs[:username])
+    user = User.where(username: attrs[:username]).first
     assert { user }
   end
 end

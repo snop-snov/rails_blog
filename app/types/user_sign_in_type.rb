@@ -10,7 +10,7 @@ class UserSignInType
   validate :check_authenticate, if: :username
 
   def user
-    User.find_by_username username
+    @user = User.where(username: username).first!
   end
 
   private
