@@ -1,6 +1,9 @@
 - model_class = User
 .page-header
   %h1=t '.users_listing'
+
+= paginate @users
+
 %table.table.table-striped
   %thead
     %tr
@@ -11,5 +14,7 @@
       %tr
         %td= user.username
         %td=l user.created_at, :format => :short
+
+= paginate @users
 
 = link_to t('.new'), new_user_path, :class => 'btn btn-primary'

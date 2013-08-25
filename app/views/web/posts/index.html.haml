@@ -1,6 +1,9 @@
 - model_class = Post
 .page-header
   %h1=t '.posts_listing'
+
+= paginate @posts
+
 %table.table.table-striped
   %thead
     %tr
@@ -28,5 +31,7 @@
             = link_to t('.destroy'), post_path(post), :method => :delete, data: { :confirm => t('.delete_confirm') }, class: 'btn btn-mini btn-danger'
         %td= post.state
         %td= post.activity_state
+
+= paginate @posts
 
 = link_to t('.new'), new_post_path, :class => 'btn btn-primary'
