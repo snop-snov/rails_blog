@@ -3,6 +3,7 @@ require 'test_helper'
 class Web::PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
+    @post.publish
     @owner = create :owner
   end
 
@@ -17,7 +18,7 @@ class Web::PostsControllerTest < ActionController::TestCase
     post :create, post: attrs
     assert_response :redirect
 
-    post = Post.find_by_title(attrs[:title])
+    post = Post.where(title: attrs[:title]).first
     assert { post }
   end
 
@@ -34,11 +35,12 @@ class Web::PostsControllerTest < ActionController::TestCase
 
   test "should update post" do
     sign_in @owner
-    put :update, id: @post.id, post: {title: 'Some title'}
-    assert_redirected_to :posts
+    attrs = attributes_for :post
+    put :update, id: @post.id, post: attrs
+    assert_response :redirect
 
     @post.reload
-    assert { @post.state == "unpublished" }
+    assert { attrs[:title] == @post.title }
   end
 
   test "should mark post as deleted" do
