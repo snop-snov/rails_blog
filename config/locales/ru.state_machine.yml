@@ -1,0 +1,18 @@
+ru:
+  activerecord:
+    state_machines:
+      post:
+        state:
+          states:
+            unpublished: Неопубликованный
+            published: Опубликованный
+          events:
+            publish: Опубликовать
+        activity_state:
+          states:
+            new_post: Новый пост
+            deleted: Удалён
+            restored: Восстановлен
+          events:
+            mark_as_deleted: Удалить
+            restore: Восстановить

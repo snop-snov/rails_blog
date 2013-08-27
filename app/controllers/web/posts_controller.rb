@@ -18,7 +18,7 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def index
-    @posts = Post.published
+    @posts = Post.published.page(params[:page])
   end
 
   def show
