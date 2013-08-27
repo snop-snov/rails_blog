@@ -2,7 +2,7 @@ class Web::Posts::ApplicationController < Web::ApplicationController
   helper_method :resource_post
 
   def resource_post
-    @post = Post.where(id: params[:post_id]).first!
+    @post = Post.find(params[:post_id])
   end
 
   # Prevent CSRF attacks by raising an exception.
