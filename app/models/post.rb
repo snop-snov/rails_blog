@@ -3,8 +3,6 @@ class Post < ActiveRecord::Base
 
   mount_uploader :image, PostImageUploader
 
-  scope :published, -> { where(state: :published) }
-
   state_machine :state, :initial => :unpublished do
     state :unpublished
     state :published
@@ -30,4 +28,6 @@ class Post < ActiveRecord::Base
       transition :deleted => :restored
     end
   end
+
+  include PostRepository
 end
