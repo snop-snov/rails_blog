@@ -13,6 +13,7 @@ gem 'ancestry'
 gem 'wrong'
 gem 'kaminari'
 gem 'cocoon'
+gem 'ransack'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
