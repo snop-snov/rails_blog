@@ -12,6 +12,7 @@ gem 'mini_magick'
 gem 'ancestry'
 gem 'wrong'
 gem 'kaminari'
+gem 'cocoon'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
