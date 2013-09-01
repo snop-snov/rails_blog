@@ -18,7 +18,9 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def index
-    @posts = Post.published.page(params[:page])
+    query = { s: 'created_at desc' }.merge(params[:q] || {})
+    @search = Post.published.ransack(query)
+    @posts = @search.result(distinct: true).page(params[:page])
   end
 
   def show
