@@ -5,6 +5,9 @@
   = f.input :state_event, as: :state_event
   = f.input :activity_state_event, as: :state_event
 
+  = f.simple_fields_for :comments do |comment|
+    = render 'comment_fields', :f => comment
+
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel'), posts_path, :class => 'btn'
