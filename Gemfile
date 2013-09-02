@@ -14,6 +14,7 @@ gem 'wrong'
 gem 'kaminari'
 gem 'cocoon'
 gem 'ransack'
+gem 'draper', '~> 1.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -76,6 +77,3 @@ end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
