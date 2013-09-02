@@ -2,10 +2,16 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
   before_action :require_sign_in
 
   def create
-    @post = resource_post
+    @comment = CommentEditType.new(params[:post_comment])
+    @comment.post = resource_post
+    @comment.user = current_user
+    if @comment.save
+      f(:success)
+    else
+      f(:error)
+    end
 
-    @comment = @post.comments.create(comment_params)
-    redirect_to post_path(@post)
+    redirect_to post_path(resource_post)
   end
 
   def destroy
@@ -30,10 +36,4 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
     end
   end
 
-#TODO сделать через типы
-  def comment_params
-    c_params = params.require(:post_comment).permit(:body, :parent_id)
-    c_params[:user_id] = current_user.id
-    c_params
-  end
 end
