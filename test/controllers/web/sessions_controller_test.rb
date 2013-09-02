@@ -6,7 +6,7 @@ class Web::SessionsControllerTest < ActionController::TestCase
   end
 
   test "should create session" do
-    attrs = {:username => @user.username, :password => @user.password}
+    attrs = {:email => @user.email, :password => @user.password}
     post :create, user_sign_in_type: attrs
     assert_redirected_to posts_path
     assert { signed_in? }

@@ -204,6 +204,9 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    validates (0.0.8)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
     virtus (0.5.5)
       backports (~> 3.3)
       descendants_tracker (~> 0.0.1)
@@ -250,5 +253,6 @@ DEPENDENCIES
   turn
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
+  validates
   virtus
   wrong
