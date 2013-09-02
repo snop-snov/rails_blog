@@ -8,6 +8,7 @@ class Web::SessionsController < Web::ApplicationController
     @session = UserSignInType.new(params[:user_sign_in_type])
     if @session.valid?
       sign_in @session.user
+      UserMailer.greet_email(@session.user).deliver
       redirect_to posts_path
     else
       render 'new'

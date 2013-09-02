@@ -1,5 +1,9 @@
 Configus.build Rails.env do
   env :production do
+    host 'example.com'
+    mailer do
+      from "noreply@example.com"
+    end
     owner do
       username "admin"
     end
