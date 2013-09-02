@@ -5,7 +5,7 @@ class Web::UsersController < Web::ApplicationController
   end
 
   def index
-    @users = User.all.page(params[:page])
+    @users = User.all.page(params[:page]).decorate
   end
 
   def create
