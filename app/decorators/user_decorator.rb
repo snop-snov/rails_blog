@@ -2,6 +2,6 @@ class UserDecorator < ApplicationDecorator
   delegate_all
 
   def full_name
-    "#{username}"
+    "#{username} (#{email})"
   end
 end

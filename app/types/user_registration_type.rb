@@ -1,5 +1,10 @@
 class UserRegistrationType < User
   include BaseType
 
-  permit :username, :password
+  validates :password, presence: true
+  permit :email, :username, :password
+
+  def email=(email)
+    write_attribute(:email, email.mb_chars.downcase)
+  end
 end

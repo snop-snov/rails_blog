@@ -15,6 +15,10 @@ FactoryGirl.define do
     "Comment #{n}"
   end
 
+  sequence :email do |n|
+     "email#{n}@example.com"
+  end
+
   sequence :username do |n|
      "User #{n}"
   end

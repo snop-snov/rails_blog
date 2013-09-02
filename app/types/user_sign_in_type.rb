@@ -1,16 +1,16 @@
 class UserSignInType
   include BaseTypeWithoutActiveRecord
 
-  attribute :username, String
+  attribute :email, String
   attribute :password, String
 
-  validates :username, presence: true
+  validates :email, presence: true, email: true
   validates :password, presence: true
 
-  validate :check_authenticate, if: :username
+  validate :check_authenticate, if: :email
 
   def user
-    @user = User.where(username: username).first!
+    @user = User.where(email: email.mb_chars.downcase).first!
   end
 
   private
