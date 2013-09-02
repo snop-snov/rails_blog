@@ -20,7 +20,7 @@ class Web::PostsController < Web::ApplicationController
   def index
     query = { s: 'created_at desc' }.merge(params[:q] || {})
     @search = Post.published.ransack(query)
-    @posts = @search.result(distinct: true).page(params[:page])
+    @posts = @search.result(distinct: true).page(params[:page]).decorate
   end
 
   def show
