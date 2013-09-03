@@ -2,8 +2,7 @@
   %strong= t('.parent')
   = @comment.parent_id
 
-= simple_form_for @comment, url: post_comments_path(@post), html: { class: 'form-vertical' } do |f|
+= simple_form_for @comment, url: api_post_comments_path(@post), remote: true, html: { class: 'form-vertical' } do |f|
   = f.input :parent_id, as: :hidden
   = f.input :body, wrapper: :no_label
-  .form-actions
-    = f.button :submit, class: 'btn-primary'
+  = f.button :submit
